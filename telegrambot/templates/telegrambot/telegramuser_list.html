@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Bot Example</title>
+    <style type="text/css">
+        body {
+          background-color: #c2d4d8;
+        }
+        .container {
+          margin-right: auto;
+          margin-left:  auto;
+          max-width: 960px;
+          padding: 20px;
+          background: #fff;
+          border: 1px solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td,
+        table th {
+            border: 1px solid #eceeef;
+            padding: 5px 8px;
+            text-align: left;
+        }
+        table thead {
+            border-bottom: 2px solid #eceeef;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Telegram Bot Example</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Telegram ID</th>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Button</th>
+                <th>No. of Calls</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in telegramuser_list %}
+            <tr>
+                <!-- if there is only one button(fat) for a user so rowspan =2, 
+                    if there are 2 buttons(fat, stupid) for a user then rowspan = 3.. etc -->
+                {% with rowspan=user.callcount_set.all|length|add:1 %} 
+                <td rowspan="{{ rowspan }}">{{user.telegram_id}}</td>
+                <td rowspan="{{ rowspan }}">{{user.username}}</td>
+                <td rowspan="{{ rowspan }}">{{user.firstname}}</td>
+                {% endwith %}
+            </tr>
+                {% for usercalls in user.callcount_set.all %}
+                <tr>
+                    <td>{{usercalls.button}}</td>
+                    <td>{{usercalls.count}}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
+
