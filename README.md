@@ -31,17 +31,27 @@ create `.env` file and update `SECRET_KEY`:
 
 now visit <http://localhost:8000>
 
-### 4. Setup your telegram bot
+### 4. Get token of telegram bot
 
 To create a chatbot on Telegram, you need to contact the [BotFather](https://telegram.me/BotFather).
 
-Start telegram, and search for the Botfather. Type command `/newbot` to create a bot and follow the instructions to get a token:
+Start telegram, and search for the Botfather. 
+
+##### Setup a new telegram bot
+
+Type command `/newbot` to create a bot and follow the instructions to get a token:
 
 ![botfather](https://raw.github.com/suhailvs/telegram_bot/main/botfather.webp)
 
 Your bot should have two attributes: a name and a username - which must end with "bot".
 
 The token should look something like this: `2483457814:AAHrlCx234_VskzWEJdWjTsdfuwejHyu5mI`
+
+##### Get a token from a telegram bot
+
+Type command `/mybots` to get list of existing telegram bots. Now select the telegram bot to get the Token.
+
+##### Update .env with TELEGRAM_TOKEN
 
 In the **.env** file and update `TELEGRAM_TOKEN`:
 
