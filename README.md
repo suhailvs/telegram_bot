@@ -37,7 +37,7 @@ To create a chatbot on Telegram, you need to contact the [BotFather](https://tel
 
 Start telegram, and search for the Botfather. 
 
-##### Setup a new telegram bot
+#### Setup a new telegram bot(Skip if you already have a telegram bot)
 
 Type command `/newbot` to create a bot and follow the instructions to get a token:
 
@@ -47,11 +47,11 @@ Your bot should have two attributes: a name and a username - which must end with
 
 The token should look something like this: `2483457814:AAHrlCx234_VskzWEJdWjTsdfuwejHyu5mI`
 
-##### Get a token from a telegram bot
+#### Get a token from an existing telegram bot
 
 Type command `/mybots` to get list of existing telegram bots. Now select the telegram bot to get the Token.
 
-##### Update .env with TELEGRAM_TOKEN
+#### Update .env with TELEGRAM_TOKEN
 
 In the **.env** file and update `TELEGRAM_TOKEN`:
 
